@@ -1,0 +1,62 @@
+Sssla README
+
+  小筌(Sssla) は Ruby で書かれた茶筌(ChaSen)互換の形態素解析器です。
+  小筌は「さささら」と読みます。
+
+0. 必要環境
+
+  * ruby 1.6
+  * strscan
+    http://www.loveruby.net/ja/prog/strscan.html
+  * mmap
+    http://moulon.inra.fr/ruby/mmap.html
+  * Wary (double-array library) と Ruby バインディング
+    http://cl.aist-nara.ac.jp/~kazuma-t/nlp/
+
+1. インストール方法
+
+  コマンドラインで以下のようにうちこんでください。
+  UNIX 系 OS ではおそらく root 権限が必要になります。
+
+    $ ruby install.rb config
+    $ ruby install.rb setup
+   ($ su)
+    # ruby install.rb install
+
+  (辞書作成ツールはインストールされません。)
+
+  インストール先を変更したりすることもできます。
+  その場合は ruby install.rb --help を実行してみてください。
+
+2. 使い方
+
+  2.1 文法ファイルと辞書の作成
+
+  mkdic 以下の辞書作成ツールを使って茶筌の辞書からコンバートします。
+
+    $ cd mkdic
+    $ ruby makeall.rb /usr/local/share/chasen/dic/ipadic
+
+  この作業で、以下のファイルができます。
+
+    chadic.lex  chadic.dat  chadic.wry  pos.sss  inf.sss
+    matrix.sss  table.sss
+
+  2.2 Sssla.rb の使い方
+
+  Sssla.rb [--grammar-dir DIR] [file..]
+
+  デフォルトではカレントディレクトリから文法ファイルと辞書を読み込みます。
+  これを変えるには --grammar-dir オプションを指定するか、環境変数
+  SSSLA_DIC_DIR を指定します。
+
+  現在のところ最適解の表示しかできません。
+
+3. ライセンス
+
+  それぞれのファイルに記載されたライセンスに従って配布します。
+
+   install.rb は青木峰郎さんの setup.rb 3.0.2 を使っています。
+   http://www.loveruby.net/ja/prog/
+
+TAKAOKA Kazuma <kazuma-t@is.aist-nara.ac.jp>
