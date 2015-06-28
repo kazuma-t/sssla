@@ -1,0 +1,70 @@
+Sssla README
+============
+
+  Sssla is a morphological analizer that is comatible with ChaSen.
+
+Requirements
+------------
+
+  * ruby 1.6
+  * strscan
+    http://www.loveruby.net/ja/prog/strscan.html
+  * mmap
+    http://moulon.inra.fr/ruby/mmap.html
+  * Wary (double-array library) and its Ruby binding
+    http://cl.aist-nara.ac.jp/~kazuma-t/nlp/
+
+Install
+-------
+
+  De-Compress archive and enter its top directory.
+  Then type:
+
+    $ ruby install.rb config
+    $ ruby install.rb setup
+   ($ su)
+    # ruby install.rb install
+
+  (Tools under mkdic are not installed.)
+
+  You can also install files in your favor directory by
+  supplying install.rb some options. Try "ruby install.rb --help".
+
+Usage
+-----
+  Making grammar files and a dictionary
+  -------------------------------------
+
+  Convert grammar files and a dictionary file of ChaSen using the tools
+  under mkdic.
+
+    $ cd mkdic
+    $ ruby makeall.rb /usr/local/share/chasen/dic/ipadic
+
+  So following files are created.
+
+    chadic.lex  chadic.dat  chadic.wry  pos.sss  inf.sss
+    matrix.sss  table.sss
+
+  Usage of sssla.rb
+  -----------------
+
+  sssla.rb [--grammar-dir DIR] [file..]
+
+  Sssla.rb reads grammar files and the dictionary in current directory.
+  And you can specify the directory by --grammar-dir option and 
+  the environment variable SSSLA_DIC_DIR.
+
+  Sssla.rb shows only the best path in the lattice.
+
+License
+-------
+
+  All the files in this package are distributed under the licences
+  written in each files.
+
+  This package includes install.rb in setup.rb 3.0.2 written by
+  AOKI Minero-SAN.
+  http://www.loveruby.net/ja/prog/
+
+TAKAOKA Kazuma <kazuma-t@is.aist-nara.ac.jp>
