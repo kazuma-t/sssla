@@ -1,7 +1,7 @@
 Sssla README
 ============
 
-  Sssla is a morphological analizer that is comatible with ChaSen.
+  Sssla is a morphological analyzer that is compatible with ChaSen.
 
 Requirements
 ------------
@@ -17,7 +17,7 @@ Requirements
 Install
 -------
 
-  De-Compress archive and enter its top directory.
+  Decompress archive and enter its top directory.
   Then type:
 
     $ ruby install.rb config
@@ -27,7 +27,7 @@ Install
 
   (Tools under mkdic are not installed.)
 
-  You can also install files in your favor directory by
+  You can also install files in your favorite directory by
   supplying install.rb some options. Try "ruby install.rb --help".
 
 Usage
